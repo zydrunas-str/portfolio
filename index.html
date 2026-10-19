@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Žydrūnas Strumila — dizaineris, AI menininkas, lektorius</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+html { scroll-behavior: smooth; scroll-padding-top: 120px; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dcd5cc; color: #111318; font-family: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 26px; -webkit-font-smoothing: antialiased; }
+*, *::before, *::after { box-sizing: border-box; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+a { color: #111318; }
+a:hover { color: #001d7d; }
+:focus-visible { outline: 2px solid #001d7d; outline-offset: 2px; }
+</style>
+</helmet>
+
+<header style="position: sticky; top: 0; z-index: 5; background: #dcd5cc; border-bottom: 1px solid #cfd1cb;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); min-height: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: 24px;">
+    <a href="#top" style="order: 0; padding: 16px 0; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap;">Žydrūnas Strumila</a>
+    <nav aria-label="Pagrindinė" style="order: {{ r.navOrder }}; flex: {{ r.navFlex }}; display: flex; gap: 24px; overflow-x: auto; scrollbar-width: none; white-space: nowrap; margin: {{ r.navMargin }}; padding: {{ r.navPad }}; border-top: {{ r.navBorder }};">
+      <a href="#darbai" style="flex: none; font-size: 15px; line-height: 20px; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent;" style-hover="border-bottom-color: #7c8086;">Darbai</a>
+      <a href="#video" style="flex: none; font-size: 15px; line-height: 20px; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent;" style-hover="border-bottom-color: #7c8086;">Video</a>
+      <a href="#parodos" style="flex: none; font-size: 15px; line-height: 20px; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent;" style-hover="border-bottom-color: #7c8086;">Parodos</a>
+      <a href="#kursai" style="flex: none; font-size: 15px; line-height: 20px; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent;" style-hover="border-bottom-color: #7c8086;">AI kursai</a>
+      <a href="#apie" style="flex: none; font-size: 15px; line-height: 20px; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent;" style-hover="border-bottom-color: #7c8086;">Apie</a>
+    </nav>
+    <div style="order: 2; display: flex; align-items: center; gap: 16px;">
+      <sc-if value="{{ r.wide }}" hint-placeholder-val="{{ true }}"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60; display: flex; align-items: center; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #8fc49a; display: inline-block;"></span>Vilnius</span></sc-if>
+      <a href="#kontaktai" style="display: inline-flex; gap: 8px; font-size: 15px; line-height: 20px; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #111318;" style-hover="color: #001d7d; border-bottom-color: #001d7d;">Rašyk <span style="font-family: 'IBM Plex Mono', monospace; color: #0068b5;">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top" style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px);">
+
+  <section aria-label="Įžanga" style="padding: {{ r.heroPad }}; display: flex; flex-direction: column; gap: 32px;">
+    <h1 style="font-size: clamp(56px, 11vw, 120px); line-height: .92; font-weight: 500; letter-spacing: -0.045em;">Žydrūnas Strumila</h1>
+    <div style="display: flex; flex-wrap: wrap; gap: 32px 48px; justify-content: space-between; align-items: flex-start;">
+      <p style="flex: 1 1 460px; min-width: 0; max-width: 68ch; font-size: 20px; line-height: 30px;">Dizaineris, AI menininkas ir lektorius. Daugiau nei 30 metų reklamos agentūrose: pakuotės, kampanijos, paruošimas spaudai, retušas ir judantis vaizdas. Dabar generatyvinį AI taikau dizaino procese ir moku to kitus.</p>
+      <div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 16px;">
+        <img src="img/portretas.jpg" alt="Žydrūnas Strumila" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 1px solid #7c8086;">
+        <dl style="margin: 0; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #cfd1cb; padding-top: 12px;">
+          <div style="display: flex; justify-content: space-between; gap: 16px;"><dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Praktika</dt><dd style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 20px; text-align: right;">nuo 1995 m.</dd></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px;"><dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Dabar</dt><dd style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 20px; text-align: right;">CRITICAL</dd></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px;"><dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Kryptys</dt><dd style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 20px; text-align: right;">Dizainas · AI · Motion</dd></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px;"><dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Išsilavinimas</dt><dd style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 20px; text-align: right;">VPU, matematika ir informatika</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="darbai" aria-labelledby="darbai-h" style="padding-bottom: {{ r.secPad }};">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; border-top: 2px solid #111318; padding-top: 16px; margin-bottom: 24px;">
+      <h2 id="darbai-h" style="font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em;">Darbai</h2>
+      <p style="font-size: 14px; line-height: 20px; color: #555a60;">Nuo naujausių iki 2004 m.</p>
+    </div>
+    <p style="max-width: 68ch; margin-bottom: 32px;">Dirbu dizaineriu reklamos agentūroje, todėl dauguma darbų gimė komandoje. Vienur vedžiau vizualą nuo eskizo iki tiražo, kitur ruošiau maketus spaudai, retušavau ar animavau. Dalis darbų – asmeniniai klientai.</p>
+
+    <div role="group" aria-label="Filtruoti pagal darbo pobūdį" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
+      <sc-for list="{{ whoChips }}" as="c" hint-placeholder-count="3">
+        <button type="button" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border: 1px solid {{ c.bd }}; border-radius: 999px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: {{ c.fg }}; background: {{ c.bg }}; cursor: pointer;" style-hover="border-color: #111318; color: #111318;">{{ c.label }}</button>
+      </sc-for>
+    </div>
+
+    <div style="border-top: 1px solid #cfd1cb;">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="5">
+        <div style="border-bottom: 1px solid #cfd1cb;">
+          <button type="button" onClick="{{ g.toggle }}" aria-expanded="{{ g.open }}" style="width: 100%; display: grid; grid-template-columns: 20px minmax(0, 1fr); align-items: baseline; gap: {{ r.rowGap }}; padding: 16px 8px; background: {{ g.bg }}; box-shadow: inset 2px 0 0 {{ g.bar }}; border: 0; cursor: pointer; text-align: left; font: inherit; color: #111318;" style-hover="background: #f7f7f3;">
+            <span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; line-height: 20px; color: #0068b5;">{{ g.sign }}</span>
+            <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; min-width: 0;">
+              <span style="font-size: {{ r.groupFs }}; line-height: 44px; font-weight: 500; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: {{ g.labelColor }};">{{ g.label }}</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">{{ g.sub }}</span>
+            </span>
+          </button>
+          <sc-if value="{{ g.open }}" hint-placeholder-val="{{ false }}">
+            <ol style="list-style: none; margin: 0; padding: {{ r.olPad }};">
+              <sc-for list="{{ g.items }}" as="w" hint-placeholder-count="4">
+                <li style="border-top: 1px solid #cfd1cb;">
+                  <button type="button" onClick="{{ w.toggle }}" aria-expanded="{{ w.isOpen }}" style="width: 100%; display: grid; grid-template-columns: {{ r.itemCols }}; align-items: center; gap: {{ r.rowGap }}; padding: 12px 0; background: transparent; border: 0; cursor: pointer; text-align: left; font: inherit; color: #111318;">
+                    <span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; line-height: 20px; color: #0068b5;">{{ w.sign }}</span>
+                    <span style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; border: 1px solid #cfd1cb; background: #f7f7f3; overflow: hidden;">
+                      <sc-if value="{{ w.thumb }}" hint-placeholder-val="{{ true }}">
+                        <img src="{{ w.thumb }}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+                      </sc-if>
+                      <sc-if value="{{ w.thumbVid }}" hint-placeholder-val="{{ false }}">
+                        <video src="{{ w.thumbVid }}" muted="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+                      </sc-if>
+                    </span>
+                    <span style="min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+                      <span style="font-size: {{ r.titleFs }}; line-height: 1.3; font-weight: 500;">{{ w.title }}</span>
+                      <span style="font-size: 14px; line-height: 20px; color: #555a60;">{{ w.did }}</span>
+                      <sc-if value="{{ r.narrow }}" hint-placeholder-val="{{ false }}"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; letter-spacing: .02em; color: {{ w.whoColor }}; padding-top: 2px;">{{ w.whoText }}</span></sc-if>
+                    </span>
+                    <sc-if value="{{ r.wide }}" hint-placeholder-val="{{ true }}"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; letter-spacing: .02em; color: {{ w.whoColor }}; text-align: right;">{{ w.whoText }}</span></sc-if>
+                  </button>
+                  <sc-if value="{{ w.isOpen }}" hint-placeholder-val="{{ false }}">
+                    <div style="padding: {{ r.mediaPad }};">
+                      <sc-if value="{{ w.hasMedia }}" hint-placeholder-val="{{ true }}">
+                        <div style="display: grid; grid-template-columns: {{ r.mediaCols }}; gap: {{ r.mediaGap }};">
+                          <sc-for list="{{ w.media }}" as="m" hint-placeholder-count="3">
+                            <button type="button" onClick="{{ m.open }}" aria-label="{{ m.aria }}" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; padding: 0; border: 1px solid #7c8086; background: #f7f7f3; overflow: hidden; cursor: zoom-in;" style-hover="border-color: #111318;">
+                              <sc-if value="{{ m.img }}" hint-placeholder-val="{{ true }}">
+                                <img src="{{ m.img }}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+                              </sc-if>
+                              <sc-if value="{{ m.vid }}" hint-placeholder-val="{{ false }}">
+                                <video src="{{ m.vid }}" muted="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #111318;"></video>
+                                <span style="position: absolute; left: 50%; top: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 999px; background: #b9dcbc; color: #111318; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 40px; text-align: center; padding-left: 3px;">▶</span>
+                              </sc-if>
+                            </button>
+                          </sc-for>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ w.noMedia }}" hint-placeholder-val="{{ false }}">
+                        <p style="font-size: 14px; line-height: 20px; color: #555a60;">Vaizdai bus pridėti.</p>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                </li>
+              </sc-for>
+            </ol>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="video" aria-labelledby="video-h" style="padding-bottom: {{ r.secPad }};">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; border-top: 2px solid #111318; padding-top: 16px; margin-bottom: 32px;">
+      <h2 id="video-h" style="font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em;">Video</h2>
+      <p style="font-size: 14px; line-height: 20px; color: #555a60;">Animacija ekranams ir socialiniams tinklams</p>
+    </div>
+    <div style="display: grid; grid-template-columns: {{ r.vidCols }}; grid-auto-flow: dense; gap: {{ r.vidGap }}; align-items: end;">
+      <sc-for list="{{ videos }}" as="v" hint-placeholder-count="6">
+        <figure style="margin: 0; min-width: 0; grid-column: {{ v.span }};">
+          <div style="position: relative; aspect-ratio: {{ v.ratio }}; border: 1px solid #7c8086; background: #111318; overflow: hidden;">
+            <sc-if value="{{ v.playing }}" hint-placeholder-val="{{ false }}">
+              <video src="{{ v.src }}" controls="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;"></video>
+            </sc-if>
+            <sc-if value="{{ v.idle }}" hint-placeholder-val="{{ true }}">
+              <video src="{{ v.poster }}" poster="{{ v.img }}" muted="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;"></video>
+              <button type="button" onClick="{{ v.play }}" aria-label="{{ v.aria }}" style="position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; margin: -28px 0 0 -28px; border: 0; border-radius: 999px; background: #b9dcbc; color: #111318; font-family: 'IBM Plex Mono', monospace; font-size: 18px; line-height: 56px; text-align: center; padding: 0 0 0 4px; cursor: pointer; z-index: 1; transition: transform 160ms cubic-bezier(.2,0,0,1);" style-hover="transform: scale(1.08);">▶</button>
+              <span style="position: absolute; right: 8px; bottom: 8px; z-index: 1; background: #111318; color: #ecede7; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; padding: 2px 8px;">{{ v.format }}</span>
+            </sc-if>
+          </div>
+          <figcaption style="padding-top: 8px; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 15px; line-height: 20px; font-weight: 500;">{{ v.title }}</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">{{ v.meta }}</span>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="parodos" aria-labelledby="parodos-h" style="padding-bottom: {{ r.secPad }};">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; border-top: 2px solid #111318; padding-top: 16px; margin-bottom: 32px;">
+      <h2 id="parodos-h" style="font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em;">Parodos</h2>
+      <p style="font-size: 14px; line-height: 20px; color: #555a60;">AI menas</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px 48px; justify-content: space-between; align-items: flex-start; margin-bottom: 32px;">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Meniniai darbai · 2026 · Midjourney</span>
+        <h3 style="font-size: clamp(32px, 5vw, 56px); line-height: 1; font-weight: 500; letter-spacing: -0.03em;">Ne visai išėję</h3>
+        <p style="font-size: 15px; line-height: 22px; color: #555a60;">Dalyvavimas 10-ojoje tarptautinėje tapybos ir skaitmeninio meno bienalėje „Nematyti kraštai“</p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px 24px;">
+      <sc-for list="{{ art }}" as="a" hint-placeholder-count="3">
+        <figure style="margin: 0; min-width: 0;">
+          <button type="button" onClick="{{ a.open }}" aria-label="{{ a.aria }}" style="position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 1px solid #7c8086; background: #f7f7f3; overflow: hidden; cursor: zoom-in;">
+            <img src="{{ a.img }}" alt="{{ a.title }}" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          </button>
+          <figcaption style="padding-top: 12px; display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 20px; line-height: 26px; font-weight: 500;">{{ a.title }}</span>
+            <span style="font-size: 15px; line-height: 22px; color: #555a60; max-width: 52ch;">{{ a.text }}</span>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+
+    <div style="margin-top: 64px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-start;">
+      <div style="flex: 1 1 300px; min-width: 0; max-width: 420px; display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Pirmoji AI meno paroda Lietuvoje</span>
+        <h3 style="font-size: clamp(28px, 4vw, 40px); line-height: 1.05; font-weight: 500; letter-spacing: -0.02em;">DI vizijos: algoritminiai žaidimai</h3>
+        <p>Parodos dalyvis ir vienas iš organizatorių.</p>
+        <div><a href="https://zydrunas-str.github.io/DI-vizijos/" target="_blank" rel="noopener" style="display: inline-flex; gap: 8px; font-size: 15px; line-height: 20px; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #111318;" style-hover="color: #001d7d; border-bottom-color: #001d7d;">Atidaryti parodą <span style="font-family: 'IBM Plex Mono', monospace; color: #0068b5;">↗</span></a></div>
+      </div>
+      <a href="https://zydrunas-str.github.io/DI-vizijos/" target="_blank" rel="noopener" aria-label="Atidaryti parodą DI vizijos" style="flex: 2 1 480px; min-width: 0; display: block; position: relative; aspect-ratio: 16 / 10; border: 1px solid #7c8086; background: #f7f7f3; overflow: hidden; container-type: inline-size;">
+        <iframe src="https://zydrunas-str.github.io/DI-vizijos/" title="DI vizijos: algoritminiai žaidimai" loading="lazy" tabindex="-1" scrolling="no" style="position: absolute; top: 0; left: 0; width: 1440px; height: 900px; border: 0; transform-origin: 0 0; transform: scale(calc(100cqw / 1440px)); pointer-events: none;"></iframe>
+        <span style="position: absolute; inset: 0;"></span>
+      </a>
+    </div>
+  </section>
+
+  <section id="kursai" aria-labelledby="kursai-h" style="padding-bottom: {{ r.secPad }};">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; border-top: 2px solid #111318; padding-top: 16px; margin-bottom: 32px;">
+      <h2 id="kursai-h" style="font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em;">AI kursai</h2>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between;">
+      <p style="flex: 1 1 420px; min-width: 0; max-width: 60ch; font-size: 20px; line-height: 30px;">Vedu praktinius AI kursus dizaineriams, komandoms ir kursuok.lt platformoje: kaip generatyvinius įrankius įtraukti į kasdienį darbą.</p>
+    </div>
+  </section>
+
+  <section id="apie" aria-labelledby="apie-h" style="padding-bottom: {{ r.secPad }};">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; border-top: 2px solid #111318; padding-top: 16px; margin-bottom: 32px;">
+      <h2 id="apie-h" style="font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em;">Apie</h2>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: flex-start;">
+      <div style="flex: 1 1 340px; min-width: 0; max-width: 520px; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Trumpai</span>
+        <p>Dizainu užsiimu nuo 1995-ųjų. Didžiąją laiko dalį dirbau reklamos agentūrose, kur idėją įgyvendina visa komanda: kūrybos vadovas ją sugalvoja, o aš paverčiu maketu, retušuoju, pritaukau pakuotei, sugalvoju judantį vaizdą, prižiūriu gamybą. Lowe Age vadovavau dizaino komandai ir mokiau naujus žmones.</p>
+        <p>Šalia agentūrų dažnai turiu asmeninių klientų: logotipai, knygų maketai, iliustracijos. Matematikos ir informatikos magistro diplomas padėjo daug geriau suprasti dabartines AI technologijas.<br></p>
+        <div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #cfd1cb; padding-top: 12px; margin-top: 8px;">
+          <div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 12px; border-bottom: 1px solid #cfd1cb; margin-bottom: 4px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Įgūdžiai</span>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px;">
+              <li style="border: 1px solid #7c8086; border-radius: 999px; padding: 2px 12px; font-size: 14px; line-height: 22px;">Skaitmeninė reklama</li>
+              <li style="border: 1px solid #7c8086; border-radius: 999px; padding: 2px 12px; font-size: 14px; line-height: 22px;">Spauda</li>
+              <li style="border: 1px solid #7c8086; border-radius: 999px; padding: 2px 12px; font-size: 14px; line-height: 22px;">Motion dizainas</li>
+              <li style="border: 1px solid #7c8086; border-radius: 999px; padding: 2px 12px; font-size: 14px; line-height: 22px;">AI generatyvinis dizainas</li>
+              <li style="border: 1px solid #7c8086; border-radius: 999px; padding: 2px 12px; font-size: 14px; line-height: 22px;">Darbo proceso optimizavimas</li>
+              <li style="border: 1px solid #7c8086; border-radius: 999px; padding: 2px 12px; font-size: 14px; line-height: 22px;">Pakuotės</li>
+              <li style="border: 1px solid #7c8086; border-radius: 999px; padding: 2px 12px; font-size: 14px; line-height: 22px;">Knygos</li>
+            </ul>
+          </div>
+          <div style="display: flex; justify-content: space-between; gap: 16px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Kalbos</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 20px; text-align: right;">LT · EN · PL · RU</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Programos</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 20px; text-align: right; min-width: 0;">Adobe CC · After Effects · Midjourney</span></div>
+        </div>
+      </div>
+      <div style="flex: 1 1 460px; min-width: 0;">
+        <span style="display: block; margin-bottom: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">Patirtis</span>
+        <ol style="list-style: none; margin: 0; padding: 0; border-top: 1px solid #cfd1cb;">
+          <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="6">
+            <li style="border-bottom: 1px solid #cfd1cb; padding: 12px 8px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 24px;">
+              <span style="flex: 0 0 120px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 20px; color: #555a60; font-variant-numeric: tabular-nums;">{{ j.years }}</span>
+              <span style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+                <span style="font-size: 20px; line-height: 26px; font-weight: 500;">{{ j.org }}</span>
+                <span style="font-size: 14px; line-height: 20px; color: #555a60;">{{ j.text }}</span>
+              </span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">{{ j.role }}</span>
+            </li>
+          </sc-for>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontaktai" aria-labelledby="kontaktai-h" style="padding-bottom: {{ r.secPad }};">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; border-top: 2px solid #111318; padding-top: 16px; margin-bottom: 32px;">
+      <h2 id="kontaktai-h" style="font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em;">Kontaktai</h2>
+      <p style="font-size: 14px; line-height: 20px; color: #555a60;">Projektai, mokymai, parodos</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <a href="mailto:zydrunas.str@gmail.com" style="font-size: clamp(32px, 6vw, 72px); line-height: .95; font-weight: 500; letter-spacing: -0.035em; overflow-wrap: anywhere; text-decoration: none;" style-hover="color: #001d7d;">zydrunas.str@gmail.com</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center;">
+        <a href="tel:+37069968288" style="display: inline-flex; gap: 8px; font-size: 15px; line-height: 20px; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #111318;" style-hover="color: #001d7d; border-bottom-color: #001d7d;">+370 699 68288</a>
+        <a href="https://www.linkedin.com/in/zydrunas1" target="_blank" rel="noopener" style="display: inline-flex; gap: 8px; font-size: 15px; line-height: 20px; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #111318;" style-hover="color: #001d7d; border-bottom-color: #001d7d;">LinkedIn <span style="font-family: 'IBM Plex Mono', monospace; color: #0068b5;">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #cfd1cb; padding: 24px 0 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center;">
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">© 2026 Žydrūnas Strumila</span>
+    <a href="#top" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60; text-decoration: none;" style-hover="color: #111318;">Į viršų ↑</a>
+  </footer>
+</main>
+
+<sc-if value="{{ lb }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="{{ lb.title }}" onTouchStart="{{ lbTouchStart }}" onTouchEnd="{{ lbTouchEnd }}" style="position: fixed; inset: 0; z-index: 50; background: #dcd5cc; display: grid; height: 100dvh; grid-template-rows: auto minmax(0, 1fr) auto; padding: 0 clamp(16px, 4vw, 48px);">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 56px; border-bottom: 1px solid #cfd1cb;">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #555a60;">{{ lb.pos }}</span>
+      <div style="display: flex; gap: 8px;">
+        <button type="button" onClick="{{ lbPrev }}" aria-label="Ankstesnis" style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; background: transparent; border: 1px solid #7c8086; color: #111318; width: 44px; height: 44px; cursor: pointer;" style-hover="border-color: #111318;">←</button>
+        <button type="button" onClick="{{ lbNext }}" aria-label="Kitas" style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; background: transparent; border: 1px solid #7c8086; color: #111318; width: 44px; height: 44px; cursor: pointer;" style-hover="border-color: #111318;">→</button>
+        <button type="button" onClick="{{ lbClose }}" aria-label="Uždaryti" style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; background: #111318; border: 1px solid #111318; color: #ecede7; width: 44px; height: 44px; cursor: pointer;">×</button>
+      </div>
+    </div>
+    <div style="position: relative; min-height: 0; padding: {{ r.lbPad }}; display: flex; align-items: center; justify-content: center;">
+      <sc-if value="{{ lb.isImg }}" hint-placeholder-val="{{ true }}">
+        <img src="{{ lb.src }}" alt="{{ lb.title }}" style="max-width: 100%; max-height: 100%; object-fit: contain; border: 1px solid #cfd1cb; background: #f7f7f3;">
+      </sc-if>
+      <sc-if value="{{ lb.isVid }}" hint-placeholder-val="{{ false }}">
+        <video src="{{ lb.src }}" controls="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" style="max-width: 100%; max-height: 100%; background: #111318;"></video>
+      </sc-if>
+    </div>
+    <div style="border-top: 1px solid #cfd1cb; padding: 16px 0 max(24px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 4px; max-height: 30dvh; overflow-y: auto;">
+      <span style="font-size: {{ r.lbTitleFs }}; line-height: 1.25; font-weight: 500; letter-spacing: -0.01em;">{{ lb.title }}</span>
+      <span style="font-size: 15px; line-height: 22px; color: #555a60; max-width: 68ch;">{{ lb.did }}</span>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showRole&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;}}">
+class Component extends DCLogic {
+  W = [
+    { g: '2026', t: 'Aleo kampanija', who: 'team', did: 'Kampanijos vizualas ir animacija', m: [['i', 'img/aleo.jpg'], ['v', 'video/aleo.mp4']] },
+    { g: '2026', t: 'Geberit LED ekranams', who: 'team', did: 'Agentūros kliento vizalai. Animacija', m: [['v', 'video/geberit.mp4']] },
+    { g: '2026', t: '„Kauno Tiltai“', who: 'own', did: 'Nuolatiniai parodų, komunikacijos, merch darbai, kalendoriai, tekstilė, darbo knygos', m: [['i', 'img/kt-kal26.jpg'], ['i', 'img/kt-kal27.jpg'], ['i', 'img/kt-dzemperis.jpg'], ['i', 'img/kt-pledas.jpg'], ['i', 'img/kt-knyga.jpg'], ['i', 'img/kt-maiselis.jpg'], ['i', 'img/kt-mockup2.jpg'], ['i', 'img/kt-tentas.jpg']] },
+    { g: '2026', t: 'Sumenek', who: 'team', did: 'Nuolatinis agentūros darbas, įgyvendinimas.', m: [['i', 'img/sumenek.jpg']] },
+    { g: '2026', t: 'TELE2', who: 'team', did: 'Agentūros klientas, nuolatiniai darbai. Beveik visa interneto komunikacija, baneriai, spaudos darbai, dalinis salonų apipavidalinimas.', th: 'img/tele2.png', m: [['v', 'video/tele2.mp4']] },
+    { g: '2025', t: 'Daumantai', who: 'team', did: 'Nuolatiniai darbai, etiketės, katalogai stendai', th: 'img/daumantai-thumb.jpg', m: [['i', 'img/daumantai-1.jpg'], ['i', 'img/daumantai-2.jpg'], ['i', 'img/daumantai-3.jpg'], ['i', 'img/daumantai-4.jpg']] },
+    { g: '2025', t: 'Tantum Verde', who: 'own', did: 'Video klipas, nuo ikdėjos iki veikėjų parinkimo ir pilno AI video klipo', m: [['v', 'video/tantum.mp4']] },
+    { g: '2025', t: 'Teltonika', who: 'team', did: 'Agentūros klientas, nuolatiniai darbai. Katalogai, pakuotės, lipdukai.\n', m: [['i', 'img/teltonika.jpg']] },
+    { g: '2025', t: 'Žaliasis mokinių iššūkis', who: 'team', did: 'Tęstinis agentūros projektas. Įgyvendinimo darbai.', th: 'img/zaliasis.jpg', m: [['i', 'img/zaliasis.jpg'], ['v', 'video/zaliasis.mp4']] },
+    { g: '2024', t: 'Eurovaistinė', who: 'team', did: 'Agentūros darbai. Baneriai, kategorijų animacija.', m: [['i', 'img/ev2.jpg'], ['i', 'img/ev1.jpg'], ['v', 'video/ev.mp4']] },
+    { g: '2024', t: 'Įtrauktis', who: 'team', did: 'Kampanijos vizualas.', m: [['i', 'img/itrauktis.jpg']] },
+    { g: '2024', t: 'Sugihara', who: 'team', did: 'Tęstinis agentūros projektas. Įgyvendinimo darbai.', m: [['v', 'video/sugihara.mp4']] },
+    { g: 'mc', t: 'Maxima', who: 'team', did: 'Agentūros projektai.', m: [['i', 'img/maxima.jpg']] },
+    { g: 'mc', t: 'BIG', who: 'team', did: 'Agentūros projektai.. Sezoninės kampanijos nuo eskizo iki tiražo; iliustracija nupiešta Photoshop nuo nulio pagal idėjos eskizą.', m: [['i', 'img/big-kaledos.jpg'], ['i', 'img/big-iliustracija.jpg']] },
+    { g: 'mc', t: 'Kauno Akropolis', who: 'team', did: 'Agentūros projektai. Kampanijos nuo eskizo iki tiražo, retušas.', m: [['i', 'img/akropolis.jpg']] },
+    { g: 'mc', t: 'Red Bull', who: 'team', did: 'Agentūros projektai. Kampanijų išpildymas.', m: [['i', 'img/redbull.jpg']] },
+    { g: 'mc', t: 'Nematoma', who: 'team', did: 'Plakatų serija nuo eskizo. Pagalba įgyvendinant agentūroje.', m: [['i', 'img/nematoma.jpg']] },
+    { g: 'mc', t: 'AUGA', who: 'team', did: 'Agentūros klientas. Pakuočių paruošimas spaudai, elementų retušas.', m: [['i', 'img/auga.jpg']] },
+    { g: 'mc', t: 'Cheatless', who: 'team', did: 'Agentūros klientas. Pakuočių ir dėžučių paruošimas spaudai iš eskizų.', m: [['i', 'img/cheatless.jpg']] },
+    { g: 'mc', t: 'Troosik', who: 'team', did: 'Agentūros klientas. Etikečių ir priemonių paruošimas gamybai nuo eskizo.', m: [['i', 'img/troosik.jpg']] },
+    { g: 'mc', t: 'Vilkmergė ir Lielvardė', who: 'team', did: 'Agentūros klientas. Etikečių paruošimas spaudai.', m: [['i', 'img/lielvarde.jpg']] },
+    { g: 'mc', t: 'JTI · Camel', who: 'team', did: 'Viena siš pavyzdinių darbų. Pakelių 3D vaizdai, sukurti Photoshop iš išklotinių. Darbas su JTI nuolatinis daug metų.', m: [['i', 'img/camel.jpg']] },
+    { g: 'lw', t: 'Meška šiaurėje', who: 'team', did: 'Šokolado ir dražė pakuotės. Įdomus darbas su agentūros komanda.', m: [['i', 'img/meska.jpg']] },
+    { g: 'lw', t: 'Winston', who: 'team', did: 'Key visual, pakelis iš išklotinės, POS, pritaikymas rinkai. Darbas su JTI nuolatinis daug metų.', m: [['i', 'img/winston.jpg']] },
+    { g: 'lw', t: 'Dadu Yoguta', who: 'team', did: 'Agentūros klientas. Maketas, key visual.', m: [['i', 'img/dadu.jpg']] },
+    { g: 'lw', t: 'Wingo', who: 'own', did: 'Prekės ženklas ir komunikacija.', m: [['i', 'img/wingo.jpg']] },
+    { g: 'lw', t: 'Birštono vandentiekis', who: 'own', did: 'Logotipas, laimėjęs konkursą.', m: [['i', 'img/birstonas.jpg']] },
+    { g: 'lw', t: 'Knyga „Mes nežudėme“', who: 'own', did: 'Nuo turinio maketo iki viršelio.', m: [['i', 'img/knyga.jpg']] }
+  ];
+  G = [
+    { k: '2026', label: '2026', sub: '' },
+    { k: '2025', label: '2025', sub: '' },
+    { k: '2024', label: '2024', sub: '' },
+    { k: 'mc', label: '2017–2019', sub: 'McCann Vilnius' },
+    { k: 'lw', label: '2004–2017', sub: 'Lowe Age ir asmeniniai' }
+  ];
+  ART = [
+    { t: 'Dar tiesūs', img: 'img/paroda-1.jpg', x: 'Medžiai vėjui jau atsakė. Žmonės dar ne. Pasaulis neskuba, nes jam užtenka laiko palenkti viską, kas stovi.' },
+    { t: 'Kuriais buvau', img: 'img/paroda-2.jpg', x: 'Žmogus nesikeičia, jis persidengia. Kiekvienas metų laikas palieka sluoksnį, ir nė vienas nenusivalo iki galo.' },
+    { t: 'Pėdsakas laukė ilgiau', img: 'img/paroda-3.jpg', x: 'Buvimas vėsta lėčiau nei kūnas. Žmogus jau išėjo, o vieta jį dar laiko. Paskutinis jį paleis rytas.' }
+  ];
+  VIDS = [
+    { id: 'geberit', t: 'Geberit', meta: 'LED ekranai · 2026', src: 'video/geberit.mp4', ratio: '2 / 1', wide: true, f: '1152×576' },
+    { id: 'aleo', t: 'Aleo', meta: 'JCD ekranai · 2026', img: 'img/aleo.jpg', src: 'video/aleo.mp4', ratio: '9 / 16', f: '9:16 · 0:10' },
+    { id: 'sugihara', t: 'Sugihara', meta: 'Socialiniai tinklai · 2024', src: 'video/sugihara.mp4', ratio: '9 / 16', f: '9:16' },
+    { id: 'tantum', t: 'Tantum Verde', meta: 'Reklaminis klipas · asmeninis klientas', src: 'video/tantum.mp4', ratio: '16 / 9', wide: true, f: '0:15' },
+    { id: 'zaliasis', t: 'Žaliasis mokinių iššūkis', meta: 'Animacija · 2025', img: 'img/zaliasis.jpg', src: 'video/zaliasis.mp4', ratio: '16 / 9', wide: true, f: '16:9' },
+    { id: 'ev', t: 'Eurovaistinė · kategorijos', meta: 'Animacija · 2024', src: 'video/ev.mp4', ratio: '1 / 1', f: 'Animacija' }
+  ];
+  JOBS = [
+    { years: '2020 – dabar', org: 'CRITICAL', role: 'Dizaineris', text: 'AI menas dizaine, skaitmeninis dizainas, motion, pakuotės.' },
+    { years: '2017 – 2020', org: 'McCann Vilnius', role: 'Grafikos dizaineris', text: 'Nuo eskizo iki galutinio rezultato: reklama, pakuotės, skaitmena, video montažas.' },
+    { years: '2015 – 2017', org: 'Lowe Age', role: 'Dizaino komandos vadovas', text: 'Komandos laikas ir pagalba, sudėtingi projektai, darbuotojų mokymai, darbas su gamintojais.' },
+    { years: '2004 – 2015', org: 'Lowe Age', role: 'Dizaineris', text: 'Tabako, alkoholio, farmacijos ir kitų FMCG prekių dizainas; sudėtingų pakuočių paruošimas spaudai, retušas.' },
+    { years: '1998 – 2004', org: 'Savas Takas', role: 'Dizaineris', text: 'Reklama ir maketai.' },
+    { years: '1995 – 2017', org: 'Laisvai samdomas', role: 'Grafikos dizaineris', text: 'Reklama, knygų maketai, plakatai, POS, high-end retušas. (Laukiniai reklamos agentūrų ir spaustuvių laikai).' }
+  ];
+
+  state = { who: '', open: { '2026': true }, work: {}, lb: null, playing: null, narrow: typeof window !== 'undefined' && window.innerWidth < 720 };
+
+  componentDidMount() {
+    this.onKey = (e) => {
+      if (!this.state.lb) return;
+      if (e.key === 'Escape') this.setState({ lb: null });
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    window.addEventListener('keydown', this.onKey);
+    this.mq = window.matchMedia('(max-width: 719px)');
+    this.onMq = () => this.setState({ narrow: this.mq.matches });
+    this.mq.addEventListener('change', this.onMq); this.onMq();
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); if (this.mq) this.mq.removeEventListener('change', this.onMq); document.body.style.overflow = ''; }
+  componentDidUpdate() { document.body.style.overflow = this.state.lb ? 'hidden' : ''; }
+
+  lbItems(lb) {
+    if (lb.kind === 'art') return this.ART.map(a => ({ t: '„' + a.t + '“', did: a.x, m: ['i', a.img] }));
+    const w = this.W[lb.w]; return w.m.map(m => ({ t: w.t, did: w.did, m }));
+  }
+  step(d) {
+    const lb = this.state.lb; const L = this.lbItems(lb);
+    this.setState({ lb: { ...lb, i: (lb.i + d + L.length) % L.length } });
+  }
+  whoText(w) { return w === 'own' ? 'Asmeninis klientas' : 'Agentūra, komandoje'; }
+
+  renderVals() {
+    const s = this.state;
+    const showRole = this.props.showRole ?? true;
+    const n = !!s.narrow;
+    const r = {
+      narrow: n, wide: !n,
+      navOrder: n ? 3 : 1, navFlex: n ? '1 1 100%' : '0 1 auto', navMargin: n ? '0 calc(-1 * clamp(16px, 4vw, 48px))' : '0',
+      navPad: n ? '0 clamp(16px, 4vw, 48px)' : '0', navBorder: n ? '1px solid #cfd1cb' : '0',
+      heroPad: n ? '32px 0 64px' : '64px 0 96px', secPad: n ? '64px' : '96px',
+      groupFs: n ? '32px' : '40px', titleFs: n ? '17px' : '20px',
+      olPad: n ? '0 0 12px 0' : '0 8px 16px 24px',
+      itemCols: n ? '16px 64px minmax(0, 1fr)' : '20px 72px minmax(0, 1fr) auto', rowGap: n ? '12px' : '24px',
+      mediaPad: n ? '0 0 20px 0' : '4px 0 24px 132px', mediaCols: n ? 'repeat(2, minmax(0, 1fr))' : 'repeat(auto-fill, minmax(min(100%, 200px), 1fr))', mediaGap: n ? '8px' : '16px',
+      vidCols: n ? 'repeat(2, minmax(0, 1fr))' : 'repeat(auto-fill, minmax(220px, 1fr))', vidGap: n ? '24px 12px' : '32px 24px',
+      lbPad: n ? '12px 0' : '24px 0', lbTitleFs: n ? '20px' : '24px'
+    };
+    const vis = this.W.filter(w => !s.who || w.who === s.who);
+    const filtering = !!s.who;
+
+    const groups = this.G.map(g => {
+      const items = vis.filter(w => w.g === g.k);
+      const open = filtering ? items.length > 0 : !!s.open[g.k];
+      return {
+        label: g.label, sub: g.sub, n: items.length, open,
+        sign: open ? '−' : '+', bg: open ? '#f7f7f3' : 'transparent', bar: open ? '#001d7d' : 'transparent', labelColor: open ? '#001d7d' : '#111318',
+        toggle: () => this.setState(st => ({ open: { ...st.open, [g.k]: !open } })),
+        items: items.map(w => {
+          const wi = this.W.indexOf(w); const isOpen = !!s.work[wi];
+          const fi = w.th ? ['i', w.th] : w.m.find(x => x[0] === 'i'); const fv = !fi ? w.m.find(x => x[0] === 'v') : null;
+          return {
+            title: w.t, did: w.did, isOpen, sign: isOpen ? '−' : '+',
+            whoText: showRole ? this.whoText(w.who) : '', whoColor: w.who === 'own' ? '#2f6b3f' : '#555a60',
+            thumb: fi ? fi[1] : null, thumbVid: fv ? fv[1] + '#t=0.5' : null,
+            hasMedia: w.m.length > 0, noMedia: w.m.length === 0,
+            toggle: () => this.setState(st => ({ work: { ...st.work, [wi]: !isOpen } })),
+            media: w.m.map((m, j) => ({ img: m[0] === 'i' ? m[1] : null, vid: m[0] === 'v' ? m[1] + '#t=0.5' : null, aria: w.t + ' – ' + (j + 1), open: () => this.setState({ lb: { kind: 'work', w: wi, i: j } }) }))
+          };
+        })
+      };
+    }).filter(g => g.n > 0);
+
+    let lb = null;
+    if (s.lb) {
+      const L = this.lbItems(s.lb); const it = L[s.lb.i];
+      if (it) lb = { title: it.t, did: it.did, src: it.m[1], isImg: it.m[0] === 'i', isVid: it.m[0] === 'v', pos: String(s.lb.i + 1).padStart(2, '0') + ' / ' + String(L.length).padStart(2, '0') };
+    }
+
+    return {
+      r, groups,
+      lbTouchStart: (e) => { this.tx = e.changedTouches[0].clientX; },
+      lbTouchEnd: (e) => { const dx = e.changedTouches[0].clientX - (this.tx ?? 0); if (Math.abs(dx) > 50) this.step(dx < 0 ? 1 : -1); },
+      whoChips: [{ label: 'Visi', v: '' }, { label: 'Komandoje', v: 'team' }, { label: 'Asmeniniai klientai', v: 'own' }].map(c => {
+        const on = s.who === c.v;
+        return { label: c.label, on, pick: () => this.setState({ who: c.v }), bg: on ? '#b9dcbc' : 'transparent', fg: on ? '#111318' : '#555a60', bd: on ? '#8fc49a' : '#7c8086' };
+      }),
+      videos: this.VIDS.map(v => ({ title: v.t, meta: v.meta, src: v.src, img: v.img || '', poster: v.src + '#t=0.5', ratio: v.ratio, span: (v.wide || (n && v.ratio === '1 / 1')) ? 'span 2' : 'span 1', format: v.f, playing: s.playing === v.id, idle: s.playing !== v.id, aria: 'Paleisti: ' + v.t, play: () => this.setState({ playing: v.id }) })),
+      art: this.ART.map((a, i) => ({ title: '„' + a.t + '“', text: a.x, img: a.img, aria: 'Padidinti: ' + a.t, open: () => this.setState({ lb: { kind: 'art', i } }) })),
+      jobs: this.JOBS,
+      lb, lbClose: () => this.setState({ lb: null }), lbPrev: () => this.step(-1), lbNext: () => this.step(1)
+    };
+  }
+}
+</script>
+</body>
+</html>
